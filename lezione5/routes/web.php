@@ -14,7 +14,7 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/welcome',[PageController::class,'homepage']) ->name ('welcome');
+Route::get('/',[PageController::class,'homepage']) ->name ('welcome');
 Route::get('/contatti',[PageController::class,'contatti']) ->name ('contatti');
 Route::get('/singolocorso',[PageController::class,'singolocorso']) ->name ('singolocorso');
 Route::get('/corsi',[PageController::class,'corsi']) ->name ('corsi');

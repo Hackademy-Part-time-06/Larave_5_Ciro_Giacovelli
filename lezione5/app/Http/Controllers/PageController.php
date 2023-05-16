@@ -15,7 +15,33 @@ class PageController extends Controller
  public function singolocorso(){
     return view ('singolocorso');
  }
- public function corsie(){
-    return view ('corsi');
+ public function corsi(){
+
+   $corsi = [
+      "Zumba"=>   [
+              "id" => 1,
+              "time" => "Martedi 15:30",
+              "costo" => "30€",
+              "cover" => "https://picsum.photos/600/400",
+      ],
+              "Yoga"=>[
+               "id" => 2,
+                "time" => "Giovedi 15:30",
+                "costo" => "40€",
+                "cover" => "https://picsum.photos/600/400",
+              ],
+
+      "Sala pesi"=>[
+                "id" => 3,
+                "time" => "Tutti i giorni",
+                "costo" => "40€",
+                "cover" => "https://picsum.photos/600/400",
+            ],
+            
+         ];
+   
+    return view ('corsi',['singolocorso' => $corsi]);
  }
+
+
 }

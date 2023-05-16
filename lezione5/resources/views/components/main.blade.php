@@ -11,8 +11,12 @@
     </head>
     <body>
 
-        {{$slot}}
-  
-    </body>
+ <x-navbar/>
+ {{$slot}}
+
+
+
+</body>
+
 </html>
 
