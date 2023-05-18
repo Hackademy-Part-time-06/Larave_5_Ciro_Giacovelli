@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +21,7 @@ Route::get('/contatti',[PageController::class,'contatti']) ->name ('contatti');
 Route::get('/singolocorso',[PageController::class,'singolocorso']) ->name ('singolocorso');
 Route::get('/corsi',[PageController::class,'corsi']) ->name ('corsi');
 Route::post('/send',[PageController::class,'send']) ->name ('send');
+
+
+
+

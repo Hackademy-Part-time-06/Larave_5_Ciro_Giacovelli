@@ -1,34 +1,46 @@
-
+<x-main>
 <div class="container py-4">
-    <form action={{Route('send')}} method="post">
-        @method(post)
-         commi
+    <form action={{Route('send')}} method="POST">
+        @csrf
       <div class="mb-3">
+        
         <label class="form-label">Nome</label>
-        <input class="form-control" value={{old('Nome')}} type="text" placeholder="Nome"/>
+        <input class="form-control" placeholder="Nome" name="nome" value={{old('nome')}}>
+        @error('nome')
+          {{$message}}
+        @enderror
       </div>
   
       <!--  -->
       <div class="mb-3">
         <label class="form-label">Telefono</label>
-        <input class="form-control" value={{old('Telefono')}} type="phone" placeholder="Telefono"/>
+        <input class="form-control" placeholder="Telefono" name="telefono" type="phone" value={{old('telefono')}}>
+        @error('telefono')
+          {{$message}}
+        @enderror
       </div>
     <!--  -->
       <div class="mb-3">
         <label class="form-label">Email</label>
-        <input class="form-control" value={{old('Email')}} type="email" placeholder="Email"/>
+        <input class="form-control" type="email" placeholder="Email" name="email" value={{old('email')}} >
+        @error('email')
+          {{$message}}
+        @enderror
       </div>
       <!-- -->
       <div class="mb-3">
         <label class="form-label" >Messaggio</label>
-        <textarea class="form-control" value={{old('Messaggio')}} type="text" placeholder="Messaggio" style="height: 10rem;"></textarea>
+        <textarea class="form-control" type="text" placeholder="Messaggio" name="messaggio" style="height: 10rem;">{{old('messaggio')}}</textarea>
+        @error('messaggio')
+        {{$message}}
+      @enderror
       </div>
   
       <!--  -->
       <div class="d-grid">
-        <button class="btn btn-primary btn-lg">Invia</button>
+        <button class="btn btn-primary btn-lg" type="submit">Invia</button>
       </div>
   
     </form>
-  
   </div>
+</x-main>
