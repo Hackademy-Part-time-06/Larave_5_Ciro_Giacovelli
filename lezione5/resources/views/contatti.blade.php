@@ -2,7 +2,7 @@
 <div class="container py-4">
     <form action={{Route('send')}} method="post">
         @method(post)
-        @csrf
+         commi
       <div class="mb-3">
         <label class="form-label">Nome</label>
         <input class="form-control" value={{old('Nome')}} type="text" placeholder="Nome"/>
