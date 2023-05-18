@@ -42,6 +42,9 @@ class PageController extends Controller
    
     return view ('corsi',['singolocorso' => $corsi]);
  }
+public function send(Request $request){
 
+   
+}
 
 }
