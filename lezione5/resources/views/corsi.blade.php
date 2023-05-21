@@ -12,7 +12,7 @@
                         </div>
                     </div>
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{route('singolocorso')}}">View options</a></div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{route('singolocorso',['slug' => $corso['slug']])}}">Info corso</a></div>
                     </div>
                 </div>
             </div>

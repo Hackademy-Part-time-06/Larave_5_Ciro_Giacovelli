@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 
 Route::get('/',[PageController::class,'homepage']) ->name ('welcome');
 Route::get('/contatti',[PageController::class,'contatti']) ->name ('contatti');
-Route::get('/singolocorso',[PageController::class,'singolocorso']) ->name ('singolocorso');
+Route::get('/singolocorso/{slug}',[PageController::class,'singolocorso']) ->name ('singolocorso');
 Route::get('/corsi',[PageController::class,'corsi']) ->name ('corsi');
 Route::post('/send',[PageController::class,'send']) ->name ('send');
 

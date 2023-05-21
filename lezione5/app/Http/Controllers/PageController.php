@@ -17,12 +17,12 @@ class PageController extends Controller
  public function singolocorso(){
     return view ('singolocorso');
  }
- public function corsi(){
+ 
 
-   $corsi = [
+public static $corsi = [
       "Zumba"=>   [
               "id" => 1,
-              "name"=> "zumba",
+              "name"=> "Zumba",
               "time" => "Martedi 15:30",
               "costo" => "30€",
               "cover" => "https://picsum.photos/600/400",
@@ -47,9 +47,11 @@ class PageController extends Controller
             ],
             
          ];
-   
-    return view ('corsi',['singolocorso' => $corsi]);
-   
+
+public function corsi(){
+
+    return view ('corsi',['singolocorso' => self::$corsi]);
+
  }
 
 public function send(Request $request){
@@ -79,9 +81,9 @@ public function show($slug){
 
    foreach(self::$corsi as $corso){
 
-      if($slug== $corso['slug']){
+      if($slug == $corso['slug']){
 
-         return view ('singolocorso',['corso'=>$corso]);
+         return view ('singolocorso',['corso'=>$corso[0]]);
       }
 
       
