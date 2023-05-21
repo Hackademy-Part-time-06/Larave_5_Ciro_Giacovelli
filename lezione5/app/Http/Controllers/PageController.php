@@ -22,27 +22,34 @@ class PageController extends Controller
    $corsi = [
       "Zumba"=>   [
               "id" => 1,
+              "name"=> "zumba",
               "time" => "Martedi 15:30",
               "costo" => "30€",
               "cover" => "https://picsum.photos/600/400",
+              "slug" => "Zumba",
       ],
               "Yoga"=>[
                "id" => 2,
+               "name"=> "Yoga",
                 "time" => "Giovedi 15:30",
                 "costo" => "40€",
                 "cover" => "https://picsum.photos/600/400",
+                "slug" => "yoga",
               ],
 
       "Sala pesi"=>[
                 "id" => 3,
+                "name"=> "Sala pesi",
                 "time" => "Tutti i giorni",
                 "costo" => "40€",
                 "cover" => "https://picsum.photos/600/400",
+                "slug" => "sala-pesi",
             ],
             
          ];
    
     return view ('corsi',['singolocorso' => $corsi]);
+   
  }
 
 public function send(Request $request){
@@ -65,8 +72,20 @@ public function send(Request $request){
    //dd($data);
 
    Mail::to($request->input('email'))->send(new InfoMail($data));
+   return redirect()->route('welcome')->with('Grazie per averci contattato');
 }
 
+public function show($slug){
 
+   foreach(self::$corsi as $corso){
 
+      if($slug== $corso['slug']){
+
+         return view ('singolocorso',['corso'=>$corso]);
+      }
+
+      
+}
+abort (404);
+}
 }
